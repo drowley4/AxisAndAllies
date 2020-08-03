@@ -1,0 +1,13 @@
+/home/doug/PersonalProjects/AxisAndAllies/obj/Debug/netcoreapp3.1/AxisAndAllies.csprojAssemblyReference.cache
+/home/doug/PersonalProjects/AxisAndAllies/obj/Debug/netcoreapp3.1/AxisAndAllies.AssemblyInfoInputs.cache
+/home/doug/PersonalProjects/AxisAndAllies/obj/Debug/netcoreapp3.1/AxisAndAllies.AssemblyInfo.cs
+/home/doug/PersonalProjects/AxisAndAllies/obj/Debug/netcoreapp3.1/AxisAndAllies.csproj.CoreCompileInputs.cache
+/home/doug/PersonalProjects/AxisAndAllies/bin/Debug/netcoreapp3.1/AxisAndAllies
+/home/doug/PersonalProjects/AxisAndAllies/bin/Debug/netcoreapp3.1/AxisAndAllies.deps.json
+/home/doug/PersonalProjects/AxisAndAllies/bin/Debug/netcoreapp3.1/AxisAndAllies.runtimeconfig.json
+/home/doug/PersonalProjects/AxisAndAllies/bin/Debug/netcoreapp3.1/AxisAndAllies.runtimeconfig.dev.json
+/home/doug/PersonalProjects/AxisAndAllies/bin/Debug/netcoreapp3.1/AxisAndAllies.dll
+/home/doug/PersonalProjects/AxisAndAllies/bin/Debug/netcoreapp3.1/AxisAndAllies.pdb
+/home/doug/PersonalProjects/AxisAndAllies/obj/Debug/netcoreapp3.1/AxisAndAllies.dll
+/home/doug/PersonalProjects/AxisAndAllies/obj/Debug/netcoreapp3.1/AxisAndAllies.pdb
+/home/doug/PersonalProjects/AxisAndAllies/obj/Debug/netcoreapp3.1/AxisAndAllies.genruntimeconfig.cache

@@ -1,0 +1,1 @@
+need east africa territory and one by germany
