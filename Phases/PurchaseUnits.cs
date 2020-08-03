@@ -8,20 +8,19 @@ namespace AxisAndAllies.Phases
 {
     public class PurchaseUnits : Phase
     {
-        Dictionary<Unit,int> purchaseUnits;
+        Dictionary<Unit,int> purchaseUnits { get; };
 
         public PurchaseUnits(Country cCountry, List<ITerritory> terrs)
         {
             currentCountry = cCountry;
             territories = terrs;
-            purchaseUnits = new Dictionary<Unit, int>();
         }
 
         public override void run()
         {
             Console.WriteLine($"{currentCountry.name} Purchase Units With {currentCountry.currentIPC} I.P.C.");
             Console.WriteLine(displayUnits());
-        
+            selectUnits();
 
         }
 
@@ -45,11 +44,25 @@ namespace AxisAndAllies.Phases
 
         private void selectUnits()
         {
-            string[] names = new string[10] {"INFANTRY","ARMOR","FIGHTER","BOMBER","ANTIAIRCRAFT","BATTLESHIP","AIRACRAFT CARRIER","TRANSPORT","SUBMARINE","INDUSTRIAL COMPLEX"};
+            Unit[] units = new Unit[10] {new Infantry(currentCountry),new Armor(currentCountry),new Fighter(currentCountry),new Bomber(currentCountry),new AnitAircraft(currentCountry),new Battleship(currentCountry),new AircraftCarrier(currentCountry),new Transport(currentCountry),new Submarine(currentCountry),new IndustrialComplex(currentCountry)};
             do 
             {
-                
-            }while(checkTotal());
+                purchaseUnits = new Dictionary<Unit, int>();
+                string input;
+                foreach (var item in units)
+                {
+                    Console.Write($"# of {item.name}: ");
+                    input = Console.ReadLine();
+                    while(!validateInput(input))
+                    {
+                        Console.WriteLine("Invalid Input");
+                        Console.Write($"# of {item.name}: ");
+                        input = Console.ReadLine();
+                    }
+                    purchaseUnits.Add(item, Int32.Parse(input));
+
+                }
+            }while(!checkTotal());
         }
 
         private bool checkTotal()
@@ -60,6 +73,17 @@ namespace AxisAndAllies.Phases
                 total = total + (item.Key.cost*item.Value);
             }
             if(total > currentCountry.currentIPC)
+            {
+                Console.WriteLine($"Can only spend {currentCountry.currentIPC}, tried to spend {total}");
+                return false;
+            }
+            return true;
+        }
+
+        private bool validateInput(string input)
+        {
+            int result;
+            if(!Int32.TryParse(input, out result))
             {
                 return false;
             }

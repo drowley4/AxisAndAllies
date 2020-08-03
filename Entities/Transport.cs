@@ -5,11 +5,10 @@ using AxisAndAllies.Entities.Enums;
 namespace AxisAndAllies.Entities {
     public class Transport : Unit
     {
-        public Transport(Country unitCountry, ITerritory unitTerritory) {
+        public Transport(Country unitCountry) {
             name = "TRANSPORT";
             orginalCountry = unitCountry;
             type = UnitType.Naval;
-            territory = unitTerritory;
             cost = 8;
             movement = 2;
             attackCapability = 0;
