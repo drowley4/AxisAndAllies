@@ -4,11 +4,10 @@ using AxisAndAllies.Entities.Enums;
 namespace AxisAndAllies.Entities {
     public class Bomber : Unit
     {
-        public Bomber(Country unitCountry, ITerritory unitTerritory) {
+        public Bomber(Country unitCountry) {
             name = "BOMBER";
             orginalCountry = unitCountry;
             type = UnitType.Air;
-            territory = unitTerritory;
             cost = 15;
             movement = 6;
             attackCapability = 4;

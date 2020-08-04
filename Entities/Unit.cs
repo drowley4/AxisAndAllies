@@ -9,7 +9,6 @@ namespace AxisAndAllies.Entities
     public string name { get; set; }
     public Country orginalCountry { get; set; }
     public UnitType type { get; set; }
-    public ITerritory territory { get; set; }
     public int cost { get; set; }
     public int movement { get; set; }
     public int attackCapability { get; set; }
