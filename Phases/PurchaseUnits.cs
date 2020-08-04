@@ -8,7 +8,7 @@ namespace AxisAndAllies.Phases
 {
     public class PurchaseUnits : Phase
     {
-        Dictionary<Unit,int> purchaseUnits { get; };
+        Dictionary<Unit,int> purchaseUnits { get; set; }
 
         public PurchaseUnits(Country cCountry, List<ITerritory> terrs)
         {
