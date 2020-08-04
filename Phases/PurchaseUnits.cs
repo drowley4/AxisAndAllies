@@ -21,7 +21,6 @@ namespace AxisAndAllies.Phases
             Console.WriteLine($"{currentCountry.name} Purchase Units With {currentCountry.currentIPC} I.P.C.");
             Console.WriteLine(displayUnits());
             selectUnits();
-
         }
 
         private string displayUnits()
