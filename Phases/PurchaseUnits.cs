@@ -8,7 +8,7 @@ namespace AxisAndAllies.Phases
 {
     public class PurchaseUnits : Phase
     {
-        Dictionary<Unit,int> purchaseUnits { get; set; }
+        Dictionary<Unit,int> purchasedUnits { get; set; }
 
         public PurchaseUnits(Country cCountry, List<ITerritory> terrs)
         {
@@ -21,6 +21,7 @@ namespace AxisAndAllies.Phases
             Console.WriteLine($"{currentCountry.name} Purchase Units With {currentCountry.currentIPC} I.P.C.");
             Console.WriteLine(displayUnits());
             selectUnits();
+            purchaseUnits();
         }
 
         private string displayUnits()
@@ -46,7 +47,7 @@ namespace AxisAndAllies.Phases
             Unit[] units = new Unit[10] {new Infantry(currentCountry),new Armor(currentCountry),new Fighter(currentCountry),new Bomber(currentCountry),new AnitAircraft(currentCountry),new Battleship(currentCountry),new AircraftCarrier(currentCountry),new Transport(currentCountry),new Submarine(currentCountry),new IndustrialComplex(currentCountry)};
             do 
             {
-                purchaseUnits = new Dictionary<Unit, int>();
+                purchasedUnits = new Dictionary<Unit, int>();
                 string input;
                 foreach (var item in units)
                 {
@@ -58,16 +59,26 @@ namespace AxisAndAllies.Phases
                         Console.Write($"# of {item.name}: ");
                         input = Console.ReadLine();
                     }
-                    purchaseUnits.Add(item, Int32.Parse(input));
+                    purchasedUnits.Add(item, Int32.Parse(input));
 
                 }
             }while(!checkTotal());
         }
 
+        private void purchaseUnits()
+        {
+            int total = 0;
+            foreach (var item in purchasedUnits)
+            {
+                total += (item.Key.cost*item.Value);
+            }
+            currentCountry.currentIPC -= total;
+        }
+
         private bool checkTotal()
         {
             int total = 0;
-            foreach (var item in purchaseUnits)
+            foreach (var item in purchasedUnits)
             {
                 total = total + (item.Key.cost*item.Value);
             }
